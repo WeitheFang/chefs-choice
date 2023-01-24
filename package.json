@@ -4,7 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node server.js",
+        "watch": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "npx eslint src test",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "npx prettier src test --check",
+        "prettier:fix": "npm run prettier -- --write",
+        "format": "npm run prettier:fix && npm run lint:fix"
     },
     "repository": {
         "type": "git",
