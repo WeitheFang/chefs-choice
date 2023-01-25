@@ -15,16 +15,24 @@ Recipe.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    preparation_time: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    difficulty: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     ingredients: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    recipe_instructions: {
-      type: DataTypes.TEXT,
+    recipe_directions: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
       },
     user_id: {
@@ -38,6 +46,13 @@ Recipe.init(
         type: DataTypes.INTEGER,
         references: {
             model: 'comment',
+            key: 'id',
+        },
+      },
+    tag_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'tag',
             key: 'id',
         },
       },
