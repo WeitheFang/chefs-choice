@@ -4,8 +4,6 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const express = require('express');
 const routes = require('./controllers/index');
-const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers');
 const helpers = require('./utils/helpers');
 
 const sequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -17,8 +15,6 @@ app.set('view-engine', 'handlebars');
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'secret', //change this to something else later on
