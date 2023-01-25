@@ -38,6 +38,9 @@ User.init(
         len: [6],
       },
     },
+    is_Admin: {
+        type: DataTypes.BOOLEAN,
+    },
   },
   {
     sequelize,
