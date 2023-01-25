@@ -12,7 +12,8 @@
         "lint:fix": "npm run lint -- --fix",
         "prettier": "npx prettier src test --check",
         "prettier:fix": "npm run prettier -- --write",
-        "format": "npm run prettier:fix && npm run lint:fix"
+        "format": "npm run prettier:fix && npm run lint:fix",
+        "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
     },
     "repository": {
         "type": "git",
@@ -44,6 +45,5 @@
         "eslint-config-prettier": "^8.6.0",
         "nodemon": "^2.0.20",
         "prettier": "2.8.3"
-    },
-    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+    }
 }
