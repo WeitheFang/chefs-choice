@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node server.js",
         "watch": "nodemon server.js",
+        "dev": "npm run tailwind:css && nodemon server.js",
         "seed": "node seeds/index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npx eslint src test",
