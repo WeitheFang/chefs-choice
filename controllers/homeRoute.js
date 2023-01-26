@@ -6,8 +6,8 @@ router.get('/', async (req, res) => {
     try {
         const TagData = await Tag.findAll({
             include: [
-                { model: User, attributes: ['user_name'] },
-                { model: Tag },
+                // { model: User, attributes: ['user_name'] },
+                // { model: Tag },
             ],
         });
         const tags = TagData.map((tag) => tag.get({ plain: true }));

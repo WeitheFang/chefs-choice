@@ -3,7 +3,7 @@ module.exports = {
     content: ['./views/*.handlebars', './views/**/*.handlebars'],
     theme: {
         fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
         },
         extend: {},
     },
