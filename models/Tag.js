@@ -15,6 +15,10 @@ Tag.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    tag_image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      },
     recipe_id: {
         type: DataTypes.INTEGER,
         references: {
