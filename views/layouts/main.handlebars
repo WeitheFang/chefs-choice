@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap"
             rel="stylesheet"
         />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -19,31 +19,40 @@
     <body>
         <header class="flex h-16 items-center justify-between gap-2">
             <button
-                class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-12"
+                class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-48"
             >
-                R
+                LOGO
             </button>
-
+            {{#if logged_in}}
+            <button
+                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
+            >
+                Profile
+            </button>
+            {{else}}
+            <button
+                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
+            >
+                Sign up or Login
+            </button>
+            {{/if}}
+        </header>
+        <div class="w-[100%]">
             <form class="flex flex-1 justify-between items-center">
                 <input
                     type="text"
                     id="search"
-                    class="h-12 flex-1 p-2 rounded-xl text-lg grow"
+                    class="m-2 h-12 flex-1 p-2 rounded-xl text-lg"
                     placeholder=""
                 />
                 <button
-                    class="h-12 flex-initial m-1 p-2 rounded-xl bg-white w-12 flex items-center justify-center"
+                    class="hidden sm:flex h-12 flex-initial m-2 ml-0 p-2 rounded-xl bg-white w-12 items-center justify-center hover:shadow-xl transition-shadow duration-300"
                 >
                     <img src="/svg/search.svg" alt="Search" />
                 </button>
             </form>
-
-            <button
-                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xs md:text-lg sm:text-base lg:text-xl truncate"
-            >
-                Sign up or Login
-            </button>
-        </header>
+        </div>
+        <main>{{{body}}}</main>
         <!-- Render script for logged in users only -->
         {{#if logged_in}}
         <script src="/js/logout.js"></script>
