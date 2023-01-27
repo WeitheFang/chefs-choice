@@ -6,6 +6,7 @@ const express = require('express');
 const routes = require('./controllers/index');
 const helpers = require('./utils/helpers');
 const cors = require('cors');
+const fileupload = require('express-fileupload'); 
 
 const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, `public`)));
+app.use(fileupload({useTempFiles: true}))
 
 app.use(routes);
 

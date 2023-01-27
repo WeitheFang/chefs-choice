@@ -1,7 +1,6 @@
 var cloudinary = require('cloudinary').v2;
 // var cl = new cloudinary.Cloudinary({cloud_name: "dhniskpvl", secure: true});
 
-
 cloudinary.config({
     cloud_name: process.env.cloud_name,
     api_key: process.env.api_key,

@@ -1,9 +1,10 @@
 require("dotenv").config();
 const router = require('express').Router();
-const image = require('../../utils/uploadimage')
+const uploadimage = require("../../utils/uploadimage");
 
-router.post('/uploadImage' , (req, res) => {
-    image(req.body.image)
+router.post('/' , (req, res) => {
+    console.log(req.files)
+    uploadimage(req.files.image)
     .then((url) => res.send(url))
     .catch((err) => res.status(500).send(err));
 });
