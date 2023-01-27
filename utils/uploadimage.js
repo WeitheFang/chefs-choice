@@ -1,4 +1,5 @@
 var cloudinary = require('cloudinary').v2;
+// var cl = new cloudinary.Cloudinary({cloud_name: "dhniskpvl", secure: true});
 
 
 cloudinary.config({
@@ -6,6 +7,8 @@ cloudinary.config({
     api_key: process.env.api_key,
     api_secret: process.env.api_secret,
 });
+
+console.log(cloudinary.config().cloud_name);
 
 const opts = {
     overwrite: true,
