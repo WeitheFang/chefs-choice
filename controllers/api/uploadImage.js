@@ -1,12 +1,30 @@
-require("dotenv").config();
+require('dotenv').config();
 const router = require('express').Router();
-const uploadimage = require("../../utils/uploadimage");
+const cloudinary = require('cloudinary').v2;
 
-router.post('/' , (req, res) => {
-    console.log(req.files)
-    uploadimage(req.files.image)
-    .then((url) => res.send(url))
-    .catch((err) => res.status(500).send(err));
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'DEV',
+    },
 });
 
+const multer = require('multer');
+const upload = multer({ storage: storage });
+// var cl = new cloudinary.Cloudinary({cloud_name: "dhniskpvl", secure: true});
+
+cloudinary.config({
+    cloud_name: process.env.cloud_name,
+    api_key: process.env.api_key,
+    api_secret: process.env.api_secret,
+});
+
+console.log(cloudinary.config().cloud_name);
+
+router.post('/', upload.single('picture'), async (req, res) => {
+    if (!req.file) return res.send('Please upload a file');
+    return res.json({ picture: req.file.path });
+});
 module.exports = router;
