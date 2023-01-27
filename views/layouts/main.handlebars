@@ -18,23 +18,26 @@
 
     <body>
         <header class="flex h-16 items-center justify-between gap-2">
-            <button
+            <a
+                href="/"
                 class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-48"
             >
                 LOGO
-            </button>
+            </a>
             {{#if logged_in}}
-            <button
+            <a
+                href="/profile"
                 class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
             >
                 Profile
-            </button>
+            </a>
             {{else}}
-            <button
+            <a
+                href="/login"
                 class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
             >
                 Sign up or Login
-            </button>
+            </a>
             {{/if}}
         </header>
         <div class="w-[100%]">
