@@ -24,11 +24,11 @@ Recipe.init(
       allowNull: false,
     },
     ingredients: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     recipe_directions: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     image: {
@@ -39,13 +39,6 @@ Recipe.init(
         type: DataTypes.INTEGER,
         references: {
             model: 'user',
-            key: 'id',
-        },
-      },
-    comment_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'comment',
             key: 'id',
         },
       },
