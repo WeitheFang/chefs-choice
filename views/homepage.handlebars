@@ -1,54 +1,17 @@
 <div class="m-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    {{#each tags as |tag| }}
     <a
-        href="/?"
+        href="/{{tag.id}}"
         class="bg-white rounded-2xl h-64 flex items-center justify-between hover:shadow-xl transition-shadow duration-300"
     >
         <img
             src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
-            alt="Pancake"
+            alt="Tag image"
             class="flex-none ml-4 w-36 rounded-lg"
         />
         <span class="font-thin flex-1 flex items-center justify-center text-4xl"
-            >Breakfast</span
+            >{{tag.tag}}</span
         >
     </a>
-    <a
-        href="/?"
-        class="bg-white rounded-2xl h-64 flex items-center justify-between hover:shadow-xl transition-shadow duration-300"
-    >
-        <img
-            src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
-            alt="Pancake"
-            class="flex-none ml-4 w-36 rounded-lg"
-        />
-        <span class="font-thin flex-1 flex items-center justify-center text-4xl"
-            >Lunch</span
-        >
-    </a>
-    <a
-        href="/?"
-        class="bg-white rounded-2xl h-64 flex items-center justify-between hover:shadow-xl transition-shadow duration-300"
-    >
-        <img
-            src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
-            alt="Pancake"
-            class="flex-none ml-4 w-36 rounded-lg"
-        />
-        <span class="font-thin flex-1 flex items-center justify-center text-4xl"
-            >Dinner</span
-        >
-    </a>
-    <a
-        href="/?"
-        class="bg-white rounded-2xl h-64 flex items-center justify-between hover:shadow-xl transition-shadow duration-300"
-    >
-        <img
-            src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
-            alt="Pancake"
-            class="flex-none ml-4 w-36 rounded-lg"
-        />
-        <span class="font-thin flex-1 flex items-center justify-center text-4xl"
-            >Snack</span
-        >
-    </a>
+    {{/each}}
 </div>

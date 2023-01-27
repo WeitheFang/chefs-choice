@@ -504,11 +504,11 @@ video {
 .w-36 {
   width: 9rem;
 }
-.w-48 {
-  width: 12rem;
-}
 .w-\[100\%\] {
   width: 100%;
+}
+.w-48 {
+  width: 12rem;
 }
 .w-12 {
   width: 3rem;
