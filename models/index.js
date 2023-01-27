@@ -12,7 +12,7 @@ foreignKey: 'user_id',
 });
 
 Recipe.hasMany(Comment, {
-foreignKey: 'comment_id',
+foreignKey: 'recipe_id',
 });
 
 Recipe.hasMany(Tag, {
