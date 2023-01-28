@@ -1,89 +1,44 @@
 <div class="w-[100%] flex flex-col gap-1 items-center p-1 md:p-4">
     <div class="red rounded-2xl p-4 px-12 text-3xl text-white font-thin">
-        Breakfast
+        {{tag}}
     </div>
-    <div
-        class="hidden w-full sm:flex flex-col orange m-4 rounded-2xl p-8 gap-4"
-    >
-        <a
-            href=""
-            class="bg-white rounded-2xl h-48 flex items-center justify-between hover:shadow-xl transition-shadow duration-300 px-4"
-        >
-            <div class="flex justify-between items-center gap-10 w-fit">
-                <img
-                    src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
-                    alt="Recipe image"
-                    class="flex-none w-36 rounded-lg"
-                />
-                <div class="flex gap-4 items-baseline flex-col md:flex-row">
-                    <span
-                        class="font-thin flex items-center justify-center text-4xl"
-                        >Pancakes</span
-                    >
-                    <span
-                        class="font-thin flex-1 flex items-center justify-center text-lg"
-                        >by Maria</span
-                    >
-                </div>
-            </div>
-            <div class="flex justify-center items-center gap-3">
-                <div class="flex flex-col justify-center gap-1 items-center">
-                    <img
-                        src="/svg/time.svg"
-                        alt="Recipe image"
-                        class="flex-none w-7 rounded-lg"
-                    />
-                    <span
-                        class="font-thin flex items-center justify-center text-xl flex-none"
-                        >15 min</span
-                    >
-                </div>
-                <div
-                    class="hidden md:flex flex-col justify-center gap-1 items-center"
-                >
-                    <span class="font-medium text-xl">Difficulty</span>
-                    <span
-                        class="font-thin flex-1 flex items-center justify-center text-xl"
-                        >Easy</span
-                    >
-                </div>
-            </div>
-        </a>
-    </div>
+    {{#each recipes as |recipe| }}
     <a
         href=""
-        class="bg-white rounded-2xl h-48 flex sm:hidden items-center justify-between hover:shadow-xl transition-shadow duration-300 px-4 m-4 mx-1"
+        class="flex flex-col md:flex-row items-center hover:shadow-2xl transition-shadow duration-300 bg-white w-full p-4 rounded-2xl m-2"
     >
         <img
-            src="https://www.wholesomeyum.com/wp-content/uploads/2017/03/wholesomeyum-Low-Carb-Keto-Pancakes-Recipe-21.jpg"
+            src="{{recipe.image}}"
             alt="Recipe image"
-            class="flex-none w-36 rounded-lg"
+            class="flex-none w-36 rounded-lg md:mr-4"
         />
-        <div
-            class="my-1 ml-2 flex justify-between items-center gap-5 md:gap-10 w-fit truncate"
+        <h3 class="font-thin flex-1 text-center text-lg md:text-xl xl:text-3xl">
+            {{recipe.recipe_name}}
+        </h3>
+        <h4
+            class="font-thin flex-1 flex items-center justify-center text-md md:text-lg"
         >
-            <div class="flex gap-2 items-baseline flex-col md:flex-row">
-                <span
-                    class="font-thin flex items-center justify-center text-2xl"
-                >
-                    Pancakefdafdasfsds
-                </span>
-                <span
-                    class="font-thin flex-1 flex items-center justify-center text-lg"
-                    >by Maria</span
-                >
-                <div class="flex justify-center gap-1 items-center">
-                    <img
-                        src="/svg/time.svg"
-                        alt="Recipe image"
-                        class="flex-none w-6"
-                    />
-                    <span
-                        class="font-thin flex items-center justify-center text-xl flex-none"
-                        >15 min</span
-                    >
-                </div>
+            by {{recipe.user.user_name}}
+        </h4>
+        <div
+            class="flex flex-col items-center justify-between w-full md:w-fit md:flex-row md:gap-2"
+        >
+            <div
+                class="flex items-center justify-between w-full md:w-fit md:flex-col"
+            >
+                <img src="/svg/time.svg" alt="Time:" class="flex-none w-6" />
+                <h4 class="sm:w-[100px] truncate">
+                    {{recipe.preparation_time}} min
+                </h4>
+            </div>
+            <div
+                class="flex items-center justify-between w-full md:w-fit my-2 md:my-0 md:flex-col"
+            >
+                <h4>Difficulty</h4>
+                <h4>{{recipe.difficulty}}</h4>
             </div>
         </div>
     </a>
+
+    {{/each}}
 </div>
