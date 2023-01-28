@@ -35,7 +35,10 @@ router.get('/addRecipe', withAuth, async (req, res) => {
 router.get('/tag/:id', async (req, res) => {
     try {
         const TagData = await Tag.findByPk(req.params.id, {
-            include: [{ model: Recipe }],
+            include: {
+                model: Recipe,
+                include: { model: User, attributes: [`user_name`] },
+            },
         });
         const tag = TagData.get({ plain: true });
         res.render('tag', {
