@@ -1,0 +1,168 @@
+<div class="w-[100%] flex flex-col gap-5 items-center p-1 md:p-4">
+    <div class="red rounded-2xl p-4 px-12 text-3xl text-white font-thin">
+        Add recipe
+    </div>
+    <form
+        action=""
+        class="w-full p-4 bg-white rounded-2xl grid grid-cols-3 gap-4 items-center"
+    >
+        <div
+            class="preview rounded-2xl flex flex-col items-center justify-center gap-4"
+        >
+            <img
+                id="preview-selected-image"
+                src="https://www.lecreuset.ca/on/demandware.static/-/Sites-LeCreuset_CA-Library/default/dw001b0979/images/2022/guide-to-roasting/step-4.jpg"
+                class="aspect-square object-cover rounded-2xl"
+            />
+            <div class="flex flex-col items-center justify-center">
+                <input
+                    class="w-full border rounded-xl text-lg font-thin cursor-pointer dark-red text-white p-2 hidden"
+                    id="file-upload"
+                    name="file-upload"
+                    type="file"
+                    accept="image/*"
+                    onchange="previewImage(event);"
+                />
+                <label
+                    for="file-upload"
+                    class="font-thin text-md dark-red hover:shadow-2xl transition-shadow duration-300 p-1 px-2 rounded-xl text-white cursor-pointer"
+                    >Upload image</label
+                >
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-between gap-2 col-span-2">
+            <div class="flex flex-col items-center justify-center">
+                <label
+                    for="recipe_name"
+                    class="text-black w-fit font-thin text-2xl"
+                    >Recipe name:</label
+                >
+                <input
+                    type="text"
+                    name="recipe_name"
+                    id="recipe_name"
+                    required
+                    minlength="6"
+                    placeholder="Pancakes"
+                    class="yellow text-black w-full rounded-xl text-lg p-2 font-thin"
+                />
+            </div>
+            <label class="text-black w-fit font-thin text-2xl self-center"
+                >Tags:</label
+            >
+            <div
+                class="yellow rounded-2xl p-2 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+            >
+                {{#each tags as |tag| }}
+                <div
+                    class="bg-white rounded-xl flex items-center justify-between p-2 gap-2"
+                >
+                    <input
+                        type="checkbox"
+                        id="tag_{{tag.id}}"
+                        name="tag_{{tag.id}}"
+                        value="true"
+                    />
+                    <label
+                        for="tag_{{tag.id}}"
+                        class="text-black font-thin text-sm sm:text-lg"
+                        >{{tag.tag}}</label
+                    >
+                </div>
+                {{/each}}
+            </div>
+            <div
+                class="yellow flex justify-between items-center p-2 rounded-xl gap-3"
+            >
+                <label
+                    for="difficulty"
+                    class="text-black w-fit font-thin text-2xl"
+                    >Difficulty:</label
+                >
+                <input
+                    type="text"
+                    name="difficulty"
+                    id="difficulty"
+                    required
+                    placeholder="Easy"
+                    maxlength="10"
+                    class="yellow text-black w-full rounded-xl text-lg p-2 font-thin bg-white"
+                />
+            </div>
+            <div
+                class="yellow flex justify-between items-center p-2 rounded-xl gap-3"
+            >
+                <label for="time" class="text-black font-thin text-2xl mr-11"
+                    >Time:
+                </label>
+                <input
+                    type="number"
+                    name="time"
+                    id="time"
+                    required
+                    placeholder="10"
+                    maxlength="3"
+                    class="yellow text-black w-full rounded-xl text-lg p-2 font-thin bg-white"
+                />
+                <span class="text-black w-fit font-thin text-2xl">min</span>
+            </div>
+        </div>
+        <div></div>
+        <div
+            class="col-span-3 md:col-span-2 yellow grid p-2 grid-cols-2 gap-4 rounded-xl align-middle justify-center items-center"
+            id="ingredients"
+        >
+            <h3 class="p-2 rounded-lg font-thin text-xl text-center">
+                Ingredient
+            </h3>
+            <h3 class="p-2 rounded-lg font-thin text-xl text-center">
+                Quantity
+            </h3>
+            <button
+                class="col-span-2 bg-white p-2 rounded-xl font-thin text-xl"
+                id="add-ingredient"
+                type="button"
+            >
+                Add ingredient
+            </button>
+            <input
+                type="text"
+                name="ingredient_1"
+                id="ingredient_1"
+                placeholder="Egg"
+                class="yellow text-black rounded-xl text-lg p-2 font-thin w-full bg-white"
+            />
+            <input
+                type="text"
+                name="quantity_1"
+                id="quantity_1"
+                placeholder="2 pcs"
+                class="text-black w-full rounded-xl text-lg p-2 font-thin bg-white"
+            />
+        </div>
+        <div
+            class="col-span-3 yellow rounded-xl flex flex-col justify-center items-center p-2"
+        >
+            <h3 class="p-2 rounded-lg font-thin text-xl text-center">Guide</h3>
+            <textarea
+                name="guide"
+                id="guide"
+                class="text-black w-full rounded-xl text-lg p-2 font-thin bg-white"
+                rows="12"
+                required
+            ></textarea>
+        </div>
+        <input
+            type="submit"
+            class="col-span-3 cursor-pointer p-2 bg-[#a75d5d] rounded-xl hover:shadow-2xl transition-shadow align-self-end duration-300 text-2xl font-thin text-white"
+            value="Add recipe"
+        />
+    </form>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"
+></script>
+<script src="/js/addRecipe.js"></script>
