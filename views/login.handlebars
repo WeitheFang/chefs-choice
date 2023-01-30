@@ -1,0 +1,83 @@
+<div class="w-full p-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div
+        class="bg-white w-[100%] flex flex-col items-center justify-center font-thin text-white text-2xl p-2 md:p-4 rounded-xl mx-auto"
+    >
+        <h2 class="mb-4 text-black">Sign Up</h2>
+
+        <form action="" class="grid grid-cols-3 gap-4 w-full">
+            <label for="email" class="text-black">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                minlength="4"
+                placeholder="ex@mple.com"
+                class="text-black yellow rounded-lg p-1 px-2 w-full col-span-2"
+            />
+
+            <label for="username" class="text-black">Username:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                minlength="6"
+                placeholder="megatron"
+                class="text-black yellow rounded-lg p-1 px-2 w-full col-span-2"
+            />
+            <label for="password" class="text-black">Password:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                minlength="6"
+                placeholder="make it simple"
+                class="text-black yellow rounded-lg p-1 px-2 w-full col-span-2"
+            />
+            <input
+                type="submit"
+                class="col-span-3 cursor-pointer p-2 bg-[#a75d5d] rounded-xl hover:shadow-2xl transition-shadow duration-300"
+                value="Sign Up"
+            />
+        </form>
+    </div>
+    <div
+        class="bg-white w-[100%] flex flex-col items-center justify-start font-thin text-white text-2xl p-2 md:p-4 rounded-xl mx-auto"
+    >
+        <h2 class="mb-4 text-black">Log In</h2>
+        <div
+            class="w-[100%] flex flex-col items-center justify-center font-thin text-white text-2xl mx-auto"
+        >
+            <form action="" class="grid grid-cols-3 gap-4 w-full">
+                <label for="username" class="text-black">Username:</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    minlength="6"
+                    placeholder=""
+                    class="text-black yellow rounded-lg p-1 px-2 w-full col-span-2"
+                />
+                <label for="password" class="text-black">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    minlength="6"
+                    placeholder=""
+                    class="text-black yellow rounded-lg p-1 px-2 w-full col-span-2"
+                />
+                <div class="col-span-3 h-10"></div>
+                <input
+                    type="submit"
+                    class="col-span-3 cursor-pointer p-2 bg-[#a75d5d] rounded-xl hover:shadow-2xl transition-shadow align-self-end duration-300 text-2xl"
+                    value="Log in"
+                />
+            </form>
+        </div>
+    </div>
+</div>
