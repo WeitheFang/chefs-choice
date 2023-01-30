@@ -1,9 +1,12 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
+        const newUser = req.body;
+        newUser.password = await bcrypt.hash(newUser.password, 10);
+        const userData = await User.create(newUser);
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -25,7 +28,10 @@ router.post('/login', async (req, res) => {
             });
             return;
         }
-        const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = await bcrypt.compare(
+            req.body.password,
+            userData.password
+        );
         if (!validPassword) {
             res.status(400).json({
                 message: 'Incorrect email or password, please try again',
