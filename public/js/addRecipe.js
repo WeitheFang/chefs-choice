@@ -17,3 +17,5 @@ const newFrom = async (event) => {
         }
     }
 };
+
+document.querySelector('.new-recipe-form').addEventListener('submit', newFrom); //change the query selector to match the form class name
