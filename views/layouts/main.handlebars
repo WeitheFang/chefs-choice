@@ -31,6 +31,12 @@
             >
                 Profile
             </a>
+            <button
+                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
+                id="logout"
+            >
+                Log Out
+            </button>
             {{else}}
             <a
                 href="/login"
@@ -58,7 +64,7 @@
         <main>{{{body}}}</main>
         <!-- Render script for logged in users only -->
         {{#if logged_in}}
-        <script src="/js/logout.js"></script>
+        <script src="./js/logout.js"></script>
         {{/if}}
     </body>
 </html>
