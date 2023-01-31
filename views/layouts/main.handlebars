@@ -25,18 +25,26 @@
                 LOGO
             </a>
             {{#if logged_in}}
-            <a
-                href="/profile"
-                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
-            >
-                Profile
-            </a>
-            <button
-                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
-                id="logout"
-            >
-                Log Out
-            </button>
+            <div class="flex">
+                <a
+                    href="/profile"
+                    class="h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 flex justify-center items-center"
+                >
+                    Profile
+                </a>
+                <a
+                    href="/addRecipe"
+                    class="hidden md:flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center"
+                >
+                    Add recipe
+                </a>
+                <a
+                    class="hidden lg:flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl font-thin w-48 text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center"
+                    id="logout"
+                >
+                    Log Out
+                </a>
+            </div>
             {{else}}
             <a
                 href="/login"
