@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Ingredients extends Model {}
+class RecipeTag extends Model {}
 
-Ingredients.init(
+RecipeTag.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,20 +11,11 @@ Ingredients.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        ingredient_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        ingredient_quantity: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         recipe_id: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'recipe',
-                key: 'id',
-            },
+        },
+        tag_id: {
+            type: DataTypes.INTEGER,
         },
     },
     {
@@ -32,8 +23,7 @@ Ingredients.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'ingredients',
+        modelName: 'recipe_tag',
     }
 );
-
-module.exports = Ingredients;
+module.exports = RecipeTag;
