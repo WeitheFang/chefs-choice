@@ -63,6 +63,7 @@ router.get('/recipe/:id', async (req, res) => {
             },
         });
         const recipe = RecipeData.get({ plain: true });
+        console.log(recipe);
         res.render('recipe', {
             ...recipe,
             logged_in: req.session.logged_in,

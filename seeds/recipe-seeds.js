@@ -9,7 +9,6 @@ const recipeData = [
     image: 'https://res.cloudinary.com/dhniskpvl/image/upload/v1674767567/Recipes/image_cdlxed.jpg',
     user_id: 1,
     comment_id: 1,
-    tag_id:1,
   },
   {
     recipe_name: 'Oyakodon (Japanese Chicken and Egg Rice Bowl)',
@@ -19,7 +18,6 @@ const recipeData = [
     image: 'https://res.cloudinary.com/dhniskpvl/image/upload/v1674767635/Recipes/image_z9znvc.jpg',
     user_id: 1,
     comment_id: 2,
-    tag_id:2,
   },
   {
     recipe_name: 'Tiramoussa Semifreddo - Frozen Italian Coffee Dessert',
@@ -29,7 +27,6 @@ const recipeData = [
     image: 'https://res.cloudinary.com/dhniskpvl/image/upload/v1674767699/Recipes/Tiramoussa-Semifreddo-1x1-1-2000-fdc0bef2c5954a3ba86079ce5b3453b2_riqnp5.webp',
     user_id: 2,
     comment_id: 4,
-    tag_id: 4,
   },
   {
     recipe_name: 'Air-Fried Raspberry Brie Bites',
@@ -39,7 +36,6 @@ const recipeData = [
     image: 'https://res.cloudinary.com/dhniskpvl/image/upload/v1674767738/Recipes/Air-Fried-Raspberry-Brie-Bites-1x1-1-febbe855420f421e9d355c388aea6cc3_dnebmn.webp',
     user_id: 2,
     comment_id: 3,
-    tag_id: 4,
   },
 ];
 
