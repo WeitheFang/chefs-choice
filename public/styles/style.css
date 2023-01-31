@@ -477,9 +477,6 @@ video {
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
-.float-left {
-  float: left;
-}
 .m-4 {
   margin: 1rem;
 }
