@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Tag, User, Recipe, Ingredients } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require('sequelize');
 
 router.get('/', async (req, res) => {
     try {
@@ -125,5 +126,30 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+});
+
+router.get('/search/:search', async (req, res) => {
+    try {
+        const search = req.params.search;
+        const recipeData = await Recipe.findAll({
+            where: {
+                recipe_name: {
+                    [Op.like]: '%' + search + '%',
+                },
+            },
+            include: {
+                model: User,
+                attributes: [`user_name`],
+            },
+        });
+        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+        res.render('tag', {
+            search,
+            recipes,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 module.exports = router;
