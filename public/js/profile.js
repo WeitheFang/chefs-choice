@@ -1,6 +1,8 @@
 const deleteBtn = async (event) => {
+    console.log(event.target);
     event.preventDefault();
     const id = event.target.getAttribute('data-id');
+    console.log(id);
     const response = await fetch(`/api/recipes/${id}`, {
         method: 'DELETE',
     });
