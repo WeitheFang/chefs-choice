@@ -37,11 +37,13 @@ router.post('/', withAuth, async (req, res) => {
             });
         });
         finalIngredients.forEach(async (ingredient) => {
-            await Ingredients.create({
-                ingredient_name: ingredient.ingredient,
-                ingredient_quantity: ingredient.quantity,
-                recipe_id,
-            });
+            if (ingredient.ingredient && ingredient.quantity) {
+                await Ingredients.create({
+                    ingredient_name: ingredient.ingredient,
+                    ingredient_quantity: ingredient.quantity,
+                    recipe_id,
+                });
+            }
         });
         res.status(200).json(newRecipe);
     } catch (err) {
