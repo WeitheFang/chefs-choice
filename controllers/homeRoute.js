@@ -74,15 +74,27 @@ router.get('/recipe/:id', async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Recipe }],
+        const recipeData = await Recipe.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: {
+                model: User,
+                attributes: ['user_name', 'is_Admin'],
+            },
         });
+        let user;
+        const recipes = recipeData.map((recipe) => {
+            user = recipe.user.get({ plain: true });
+            console.log(user);
 
-        const user = userData.get({ plain: true });
-
+            return recipe.get({ plain: true });
+        });
+        console.log(recipes);
+        console.log(user);
         res.render('profile', {
-            ...user,
+            recipes,
+            user,
             logged_in: true,
         });
     } catch (err) {
