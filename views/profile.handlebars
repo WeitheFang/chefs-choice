@@ -1,49 +1,54 @@
-{{!-- {{#each recipes as |recipe|}} --}}
-
-<div class="bg-white rounded-md flex-1 w-7/8 h-60 m-4 p-4 md:mr-4">
-    <div class="ml-10 p-6 w-1/3 float-left md:mr-4">
-        <img src="/svg/profile.svg" alt="Profile Picture" />
-    </div>
-    <div class="mr-30 p-4 w-30">
-        <h2 class="text-4xl font-semibold">{{user.user_name}}'s Recipes</h2>
-        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived
-        not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and more
-        recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
+<div class="flex start m-4">
+    <div
+        class="flex flex-col md:flex-row md:max-w-full rounded-lg bg-white shadow-lg"
+    >
+        <img
+            class="w-full h-auto md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg p-4"
+            src="/jpg/man-eats-greedily-delicious-hamburger-feels-very-hungry-consumes-fast-food-wears-round-spectacles-jumper.jpg"
+            alt="Profile Picture"
+        />
+        <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-5xl font-thin mb-2">
+                {{user.user_name}}'s Recipes
+            </h5>
+            <p class="text-gray-700 font-thin text-xl mb-4">
+                Hello! My name is Jack, and I'm a total Foody! Hence, the
+                nickname. Just a little bit about me before you start scrolling
+                through my recipes. While I am a "Foody", desserts are my go to
+                meal.. YES, I SAID MEAL! So, please enjoy! I will post some
+                non-dessert meals as well! Cheers!
+            </p>
+        </div>
     </div>
 </div>
-<div class="flex recipe-list">
+
+<div class="flex">
     {{#each recipes as |recipe|}}
-    <div class="bg-white w-1/3 m-4 p-4 rounded-lg">
-        {{recipe.recipe_name}}
-        <button>
+    <div class="bg-white w-1/3 m-4 p-4 rounded-lg relative">
+        <br><br><h3 class="font-thin text-lg text-center">{{recipe.recipe_name}}</h3>
+        <img class="w-30 h-auto" src="{{recipe.image}}"/>
+        <br /><button>
+            <a class="inline-block px-6 py-2.5 dark-red text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-300 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:orange active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="collapse" href="#collapseWithScrollbar" role="button" aria-expanded="false" aria-controls="collapseWithScrollbar">
+  See more...
+</a>
+<div class="collapse mt-4 max-h-6 overflow-hidden" id="collapseWithScrollbar"  style="max-width: 500px">
+    <h4 class="font-thin text-lg">Recipe Directions</h4>
+  {{recipe.recipe_directions}}
+  </p>
+</div>
             <img
-                class="static hover:shadow-xl transition-shadow duration-300"
+                class="absolute top-0 right-14 p-4 hover:shadow-xl transition-shadow duration-300"
                 src="/svg/edit.svg"
                 alt="edit"
             />
         </button>
 
         <button>
-            <img
-                data-id="{{recipe.id}}"
-                class="static"
-                src="/svg/delete.svg"
-                alt="delete"
-            />
+            <img class="absolute top-0 right-7 m-4" src="/svg/delete.svg" alt="delete" />
         </button>
-
-        <button><img class="static" src="/svg/share.svg" alt="share" /></button>
+        <button><img class="absolute top-0 right-0 m-4" src="/svg/share.svg" alt="share" /></button>
     </div>
-    {{!--
-    <div class="bg-white w-1/3 m-4 p-4 rounded-lg"></div>
-    <div class="bg-white w-1/3 m-4 p-4 rounded-lg"></div>
-    --}} {{/each}}
+    {{/each}}
 </div>
 
 <script src="/js/profile.js"></script>
