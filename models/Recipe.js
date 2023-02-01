@@ -29,7 +29,7 @@ Recipe.init(
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -44,7 +44,7 @@ Recipe.init(
         //         model: 'tag',
         //         key: 'id',
         //     },
-        //   },
+        // },
     },
     {
         sequelize,

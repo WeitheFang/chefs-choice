@@ -37,34 +37,33 @@ const newFrom = async (event) => {
     }
     console.log(finalIngredients);
 
-    // if (
-    //     recipe_name &&
-    //     recipe_directions &&
-    //     preparation_time &&
-    //     difficulty &&
-    //     tag_id &&
-    //     finalIngredients
-    // ) {
-    //     const response = await fetch('/api/recipes', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             recipe_name,
-    //             ingredients,
-    //             recipe_directions,
-    //             preparation_time,
-    //             difficulty,
-    //             tag_id,
-    //             finalIngredients,
-    //         }),
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
-    //     if (response.ok) {
-    //         // If successful, redirect the browser to the main page
-    //         document.location.replace('/');
-    //     } else {
-    //         alert(response.statusText);
-    //     }
-    // }
+    if (
+        recipe_name &&
+        recipe_directions &&
+        preparation_time &&
+        difficulty &&
+        tag_id &&
+        finalIngredients
+    ) {
+        const response = await fetch('/api/recipes', {
+            method: 'POST',
+            body: JSON.stringify({
+                recipe_name,
+                recipe_directions,
+                preparation_time,
+                difficulty,
+                tag_id,
+                finalIngredients,
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (response.ok) {
+            // If successful, redirect the browser to the main page
+            document.location.replace('/');
+        } else {
+            alert(response.statusText);
+        }
+    }
 };
 
 document.querySelector('.new-recipe-form').addEventListener('submit', newFrom); //change the query selector to match the form class name
