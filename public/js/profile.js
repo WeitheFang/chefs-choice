@@ -14,3 +14,4 @@ const deleteBtn = async (event) => {
 };
 
 document.querySelector('.recipe-list').addEventListener('click', deleteBtn); //change the query selector to match the class name of the delete button
+
