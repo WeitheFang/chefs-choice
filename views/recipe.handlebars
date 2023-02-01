@@ -37,10 +37,7 @@
                 </div>
             </div>
         </div>
-        <div
-            class="m-4 yellow rounded-2xl p-2 grid gap-2 grid-cols-3 min-h-[50px]"
-        >
-            {{#each ingredients as |ingredient| }}
+        <div class="m-4 yellow rounded-2xl p-2 grid gap-2 grid-cols-3">
             <div
                 class="bg-white rounded-xl font-thin text-lg p-3 text-center whitespace-normal break-all flex items-center justify-center"
             >
@@ -52,13 +49,11 @@
                 {{ingredient.quantity}}
             </div>
             <a
-                class="blue rounded-xl font-thin text-lg text-yellow-500 cursor-pointer p-3 text-center flex items-center hover:shadow-lg transition-shadow duration-300 justify-center"
-                href="https://www.walmart.ca/search?q={{ingredient.name}}"
+                class="blue rounded-xl font-thin text-lg text-yellow-500 cursor-pointer p-auto text-center"
             >
                 Walmart
             </a>
             {{/each}}
         </div>
-        <p class="p-4 font-thin text-lg lg:text-xl">{{recipe_directions}}</p>
     </div>
 </div>
