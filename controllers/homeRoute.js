@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tag, User, Recipe } = require('../models');
+const { Tag, User, Recipe, Ingredients } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -63,12 +63,27 @@ router.get('/recipe/:id', async (req, res) => {
             },
         });
         const recipe = RecipeData.get({ plain: true });
+        const IngredientData = await Ingredients.findAll({
+            where: {
+                recipe_id: req.params.id,
+            },
+            attributes: [
+                [`ingredient_name`, 'name'],
+                [`ingredient_quantity`, 'quantity'],
+            ],
+        });
+        const ingredients = IngredientData.map((ingredient) =>
+            ingredient.get({ plain: true })
+        );
+
         res.render('recipe', {
             ...recipe,
+            ingredients,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
+        console.log(err);
     }
 });
 

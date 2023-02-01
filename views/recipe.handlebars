@@ -40,59 +40,25 @@
         <div
             class="m-4 yellow rounded-2xl p-2 grid gap-2 grid-cols-3 min-h-[50px]"
         >
+            {{#each ingredients as |ingredient| }}
             <div
                 class="bg-white rounded-xl font-thin text-lg p-3 text-center whitespace-normal break-all flex items-center justify-center"
             >
-                Eggsfdasfdsahjfkdlafhdsalhkfdhsajklfhdklsjafhdjklsahfdklsja
+                {{ingredient.name}}
             </div>
             <div
                 class="bg-white rounded-xl font-thin text-lg p-3 text-center flex items-center justify-center"
             >
-                2
+                {{ingredient.quantity}}
             </div>
             <a
                 class="blue rounded-xl font-thin text-lg text-yellow-500 cursor-pointer p-3 text-center flex items-center hover:shadow-lg transition-shadow duration-300 justify-center"
-                href="https://www.walmart.ca/search?q=eggs"
+                href="https://www.walmart.ca/search?q={{ingredient.name}}"
             >
                 Walmart
             </a>
+            {{/each}}
         </div>
-        <p class="p-4 font-thin text-lg lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-            totam assumenda esse! Sunt, eligendi aperiam a tenetur dicta nemo
-            possimus et repellendus debitis placeat nam, non maiores error
-            provident sint? Iure alias, dolores at quo sapiente voluptates,
-            eveniet repellat possimus, quam ipsa sed ad placeat incidunt. Odio
-            numquam at dolores eaque perferendis. Molestiae cupiditate quis
-            voluptatibus quia eaque itaque molestias. Consequatur voluptas
-            provident optio iure totam, autem illo praesentium non minus nihil
-            perferendis ipsam vel impedit corrupti adipisci, placeat officiis
-            laborum, beatae voluptatibus quae. Fugiat suscipit totam rerum amet
-            dignissimos? Consequatur laborum nisi sapiente dolore commodi. Quis
-            porro eum praesentium veniam architecto provident sunt dolor quaerat
-            minus harum excepturi est eveniet minima, quibusdam laudantium
-            delectus illo autem enim obcaecati impedit! Laudantium ullam enim
-            asperiores iste laboriosam nihil doloremque ducimus quam quas illum
-            nemo minus quidem voluptatem totam at incidunt beatae molestiae
-            tempora, eos consequatur quaerat necessitatibus repellendus. Neque,
-            illum ratione. Deserunt earum minus dignissimos! Officiis rem
-            debitis assumenda dolorum recusandae doloremque voluptatibus
-            accusamus placeat at pariatur saepe ab non, nostrum ducimus,
-            distinctio in eum quod. Dicta facere sint modi architecto? Neque,
-            dolore nobis! Facere architecto quia corrupti a laborum. Placeat
-            deleniti ex maiores nemo dolor voluptatibus molestiae nesciunt, iure
-            nisi suscipit soluta fugiat vitae odio eaque eveniet, ducimus
-            distinctio! Nulla! Iure animi vero quibusdam culpa iusto dolorum
-            cumque sunt quo non dolor aperiam repudiandae, sit aliquid minus
-            incidunt magnam consectetur illum. Debitis nulla reprehenderit non
-            explicabo hic, quaerat perspiciatis tempora? Cum minus excepturi
-            impedit, molestias in ex beatae dicta doloremque obcaecati vel
-            minima. Fugit cumque odit culpa dolorem corrupti labore quos? Fuga
-            quos tempora, repudiandae unde reprehenderit provident earum
-            tenetur! Quae facere consequuntur, temporibus laudantium facilis
-            fuga eos, tenetur minima exercitationem sequi reprehenderit
-            repudiandae molestiae iure corporis tempore iste culpa ipsum odio
-            sapiente. Ipsa placeat ea impedit quam iusto consequuntur.
-        </p>
+        <p class="p-4 font-thin text-lg lg:text-xl">{{recipe_directions}}</p>
     </div>
 </div>
