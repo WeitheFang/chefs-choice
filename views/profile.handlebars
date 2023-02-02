@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="flex">
+<div class="flex recipe-list">
     {{#each recipes as |recipe|}}
     <div class="bg-white w-1/3 m-4 p-4 rounded-lg relative">
         <br><br><h3 class="font-thin text-lg text-center">{{recipe.recipe_name}}</h3>
@@ -44,7 +44,7 @@
         </button>
 
         <button>
-            <img class="absolute top-0 right-7 m-4" src="/svg/delete.svg" alt="delete" />
+            <img data-id="{{recipe.id}}" class="absolute top-0 right-7 m-4" src="/svg/delete.svg" alt="delete" />
         </button>
         <button><img class="absolute top-0 right-0 m-4" src="/svg/share.svg" alt="share" /></button>
     </div>
