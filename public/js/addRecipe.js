@@ -97,13 +97,13 @@ $(document).ready(function () {
     name="ingredient_${id}"
     id="ingredient_${id}"
     placeholder="Egg"
-    class="yellow text-black rounded-xl text-lg p-2 font-thin w-full bg-white ingredients"
+    class="text-black rounded-xl text-lg p-2 font-thin w-full bg-white ingredients"
 /> <input
     type="text"
     name="quantity_${id}"
     id="quantity_${id}"
     placeholder="2 pcs"
-    class="yellow text-black w-full rounded-xl text-lg p-2 font-thin bg-white quantities"
+    class="text-black w-full rounded-xl text-lg p-2 font-thin bg-white quantities"
 />`);
     });
 });
