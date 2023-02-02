@@ -468,9 +468,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.collapse {
-  visibility: collapse;
-}
 .absolute {
   position: absolute;
 }
@@ -531,9 +528,6 @@ video {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
-.mt-4 {
-  margin-top: 1rem;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -584,9 +578,6 @@ video {
 }
 .h-4 {
   height: 1rem;
-}
-.max-h-6 {
-  max-height: 1.5rem;
 }
 .min-h-\[50px\] {
   min-height: 50px;
@@ -684,9 +675,6 @@ video {
 }
 .self-center {
   align-self: center;
-}
-.overflow-hidden {
-  overflow: hidden;
 }
 .truncate {
   overflow: hidden;
