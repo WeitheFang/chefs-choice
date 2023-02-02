@@ -11,7 +11,6 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap"
             rel="stylesheet"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="/styles/style.css" />
         <link rel="stylesheet" href="/styles/tailwind.css" />
         <script
@@ -33,18 +32,18 @@
             <div class="hidden lg:flex">
                 <a
                     href="/profile"
-                    class="h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 flex justify-center items-center"
+                    class="h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 flex justify-center items-center cursor-pointer"
                 >
                     Profile
                 </a>
                 <a
                     href="/addRecipe"
-                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center"
+                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center cursor-pointer"
                 >
                     Add recipe
                 </a>
                 <a
-                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl font-thin w-48 text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center"
+                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl font-thin w-48 text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center cursor-pointer"
                     id="logout-1"
                 >
                     Sign Out
@@ -53,7 +52,7 @@
             <!-- This is an example component -->
             <div class="m-5 lg:hidden">
                 <button
-                    class="text-white bg-[#a75d5d] dark-red focus:ring-4 hover:shadow-xl transition-shadow duration-300 font-thin rounded-xl px-4 p-3 text-center inline-flex items-center"
+                    class="text-white bg-[#a75d5d] dark-red focus:ring-4 hover:shadow-xl transition-shadow duration-300 font-thin rounded-xl px-4 p-3 text-center inline-flex items-center cursor-pointer"
                     type="button"
                     data-dropdown-toggle="dropdown"
                 >
@@ -139,7 +138,7 @@
         <main>{{{body}}}</main>
         <!-- Render script for logged in users only -->
         {{#if logged_in}}
-        <script src="./js/logout.js"></script>
+        <script src="/js/logout.js"></script>
         {{/if}}
 
         <script src="/js/main.js"></script>
