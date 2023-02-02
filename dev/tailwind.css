@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: linear-gradient(180deg, #ffc3a1 0%, #f0997d 100%);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Inter';
+}
+
+.dark-red {
+    background-color: #a75d5d;
+}
+.orange {
+    background-color: #f0997d;
+}
+.red {
+    background-color: #d3756b;
+}
+.blue {
+    background-color: #00818d;
+}
+.yellow {
+    background-color: #ffc3a1;
+}

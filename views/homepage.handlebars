@@ -1,0 +1,17 @@
+<div class="m-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    {{#each tags as |tag| }}
+    <a
+        href="/tag/{{tag.id}}"
+        class="bg-white rounded-2xl h-64 flex items-center justify-between hover:shadow-xl transition-shadow duration-300"
+    >
+        <img
+            src="{{tag.tag_image}}"
+            alt="Tag image"
+            class="flex-none ml-4 w-36 h-36 rounded-lg object-cover"
+        />
+        <span class="font-thin flex-1 flex items-center justify-center text-4xl"
+            >{{tag.tag}}</span
+        >
+    </a>
+    {{/each}}
+</div>

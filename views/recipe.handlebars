@@ -1,0 +1,64 @@
+<div class="w-full p-4">
+    <div class="bg-white rounded-2xl flex flex-col">
+        <div class="flex flex-col md:flex-row items-center w-full p-4">
+            <img
+                src="{{image}}"
+                alt="Recipe image"
+                class="flex-none w-36 rounded-lg md:mr-4"
+            />
+            <h3
+                class="font-thin flex-1 text-center text-lg md:text-xl xl:text-3xl"
+            >
+                {{recipe_name}}
+            </h3>
+            <h4
+                class="font-thin flex-1 flex items-center justify-center text-md md:text-lg"
+            >
+                by {{user.user_name}}
+            </h4>
+            <div
+                class="flex flex-col items-center justify-between w-full md:w-fit md:flex-row md:gap-2"
+            >
+                <div
+                    class="flex items-center justify-between w-full md:w-fit md:flex-col"
+                >
+                    <img
+                        src="/svg/time.svg"
+                        alt="Time:"
+                        class="flex-none w-6"
+                    />
+                    <h4>{{preparation_time}} min</h4>
+                </div>
+                <div
+                    class="flex items-center justify-between w-full md:w-fit my-2 md:my-0 md:flex-col"
+                >
+                    <h4>Difficulty</h4>
+                    <h4>{{difficulty}}</h4>
+                </div>
+            </div>
+        </div>
+        <div
+            class="m-4 yellow rounded-2xl p-2 grid gap-2 grid-cols-3 min-h-[50px]"
+        >
+            {{#each ingredients as |ingredient| }}
+            <div
+                class="bg-white rounded-xl font-thin text-lg p-3 text-center whitespace-normal break-all flex items-center justify-center"
+            >
+                {{ingredient.name}}
+            </div>
+            <div
+                class="bg-white rounded-xl font-thin text-lg p-3 text-center flex items-center justify-center"
+            >
+                {{ingredient.quantity}}
+            </div>
+            <a
+                class="blue rounded-xl font-thin text-lg text-yellow-500 cursor-pointer p-3 text-center flex items-center hover:shadow-lg transition-shadow duration-300 justify-center"
+                href="https://www.walmart.ca/search?q={{ingredient.name}}"
+            >
+                Walmart
+            </a>
+            {{/each}}
+        </div>
+        <p class="p-4 font-thin text-lg lg:text-xl">{{recipe_directions}}</p>
+    </div>
+</div>

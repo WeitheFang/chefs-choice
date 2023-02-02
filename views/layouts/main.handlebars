@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recipes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/styles/style.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <header class="flex h-16 items-center justify-between gap-2 p-2">
+            <a
+                href="/"
+                class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-48 text-xl font-thin"
+            >
+                Chef's Choice
+            </a>
+            {{#if logged_in}}
+            <div class="hidden lg:flex">
+                <a
+                    href="/profile"
+                    class="h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 flex justify-center items-center cursor-pointer"
+                >
+                    Profile
+                </a>
+                <a
+                    href="/addRecipe"
+                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center cursor-pointer"
+                >
+                    Add recipe
+                </a>
+                <a
+                    class="flex h-12 dark-red text-white text-center m-2 p-3 px-4 rounded-xl font-thin w-48 text-xl truncate hover:shadow-xl transition-shadow duration-300 justify-center items-center cursor-pointer"
+                    id="logout-1"
+                >
+                    Sign Out
+                </a>
+            </div>
+            <div class="m-5 lg:hidden">
+                <button
+                    class="text-white bg-[#a75d5d] dark-red focus:ring-4 hover:shadow-xl transition-shadow duration-300 font-thin rounded-xl px-4 p-3 text-center inline-flex items-center cursor-pointer"
+                    type="button"
+                    data-dropdown-toggle="dropdown"
+                >
+                    Menu
+                    <svg
+                        class="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                        ></path>
+                    </svg>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                    class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4"
+                    id="dropdown"
+                >
+                    <ul class="py-1" aria-labelledby="dropdown">
+                        <li>
+                            <a
+                                href="/profile"
+                                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                >Profile</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="/addRecipe"
+                                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                >Add recipe</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                id="logout-2"
+                                >Sign out</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+            {{else}}
+            <a
+                href="/login"
+                class="h-12 dark-red text-white text-center m-2 p-2 rounded-xl w-48 font-thin text-xl truncate hover:shadow-xl transition-shadow duration-300"
+            >
+                Sign Up or Log In
+            </a>
+            {{/if}}
+        </header>
+        <div class="w-[100%]">
+            <form
+                class="flex flex-1 justify-between items-center"
+                action=""
+                id="search-form"
+            >
+                <label for="search" class="hidden">Search for the recipe</label>
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    class="m-2 ml-4 mr-4 sm:mr-2 h-12 flex-1 p-2 rounded-xl text-lg"
+                    placeholder=""
+                />
+                <button
+                    class="hidden sm:flex h-12 flex-initial ml-0 p-2 rounded-xl bg-white w-12 items-center justify-center hover:shadow-xl transition-shadow duration-300 mr-4"
+                    type="submit"
+                >
+                    <img src="/svg/search.svg" alt="Search" />
+                </button>
+            </form>
+        </div>
+        <main>{{{body}}}</main>
+        <!-- Render script for logged in users only -->
+        {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+
+        <script src="/js/main.js"></script>
+    </body>
+</html>

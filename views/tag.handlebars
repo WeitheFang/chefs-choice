@@ -1,0 +1,42 @@
+<div class="w-[100%] flex flex-col gap-1 items-center p-1 md:p-4">
+    <div class="red rounded-2xl p-4 px-12 text-3xl text-white font-thin">
+        {{#if tag}} {{tag}} {{else}} Search results {{/if}}
+    </div>
+    {{#each recipes as |recipe| }}
+    <a
+        href="/recipe/{{recipe.id}}"
+        class="flex flex-col md:flex-row items-center hover:shadow-2xl transition-shadow duration-300 bg-white w-full p-4 rounded-2xl m-2"
+    >
+        <img
+            src="{{recipe.image}}"
+            alt="Recipe image"
+            class="flex-none w-36 rounded-lg md:mr-4"
+        />
+        <h3 class="font-thin flex-1 text-center text-lg md:text-xl xl:text-3xl">
+            {{recipe.recipe_name}}
+        </h3>
+        <h4
+            class="font-thin flex-1 flex items-center justify-center text-md md:text-lg"
+        >
+            by {{recipe.user.user_name}}
+        </h4>
+        <div
+            class="flex flex-col items-center justify-between w-full md:w-fit md:flex-row md:gap-4"
+        >
+            <div
+                class="flex items-center justify-between w-full md:w-fit md:flex-col"
+            >
+                <img src="/svg/time.svg" alt="Time:" class="flex-none w-6" />
+                <h4>{{recipe.preparation_time}} min</h4>
+            </div>
+            <div
+                class="flex items-center justify-between w-full md:w-fit my-2 md:my-0 md:flex-col"
+            >
+                <h4>Difficulty</h4>
+                <h4>{{recipe.difficulty}}</h4>
+            </div>
+        </div>
+    </a>
+
+    {{/each}}
+</div>
