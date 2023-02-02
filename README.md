@@ -4,9 +4,9 @@
 
 Introducing “Chef’s Choice” – a recipe bank that holds a plethora of recipes added by a variety of users. The recipes are all categorized by type of meal and/or preference of meal. Once you’ve chosen your meal, you can then use the embedded link to purchase the ingredients on the Walmart website.
 
-Other actions that users can perform include viewing, posting and commenting on recipes. One caveat to this is the login feature. While users can view any receipe, an account is required in order to post a recipe or comment on other recipes.
+Other actions that users can perform include viewing and posting on recipes. One caveat to this is the login feature. While users can view any receipe, an account is required in order to post a recipe.
 
-We created this website as a companion website to the (workout/meal prep? app). In this regard, we are able to create a recipe database that could be a viable option for a healthy and balanced diet.
+We created this website as a companion website to the FitnessLIND app. In this regard, we are able to create a recipe database that could be a viable option for a healthy and balanced diet.
 
 I mean, don’t get me wrong, we love to eat, too! (Don’t worry, desserts were included in the seeding process!)
 
@@ -20,6 +20,7 @@ Since this website is a work in progress, we also some ideas we hope to implemen
 
 ### Some Feature/Functionality Additions
 
+-   Inserting a comment system
 -   Rating system to rate the recipe
 -   Inclusion of nutrition facts
 -   Having a functional search bar
@@ -77,16 +78,21 @@ This app was made in collaboration with:
 3. Girdika Godwin - GitHub Repo: [https://github.com/godwingi]
 
 ### Attributions
+
 #### Hamburger Profile Picture:
-- <a href="https://www.freepik.com/free-photo/man-eats-greedily-delicious-hamburger-feels-very-hungry-consumes-fast-food-wears-round-spectacles-jumper_16075283.htm#query=person%20eating&position=1&from_view=keyword">Image by wayhomestudio</a> on Freepik
+
+-   <a href="https://www.freepik.com/free-photo/man-eats-greedily-delicious-hamburger-feels-very-hungry-consumes-fast-food-wears-round-spectacles-jumper_16075283.htm#query=person%20eating&position=1&from_view=keyword">Image by wayhomestudio</a> on Freepik
 
 #### Icons
-- Delete Icon in Glyph Style by Alex Martynov
-- Edit Icon in Glyph Style by Google Inc.
-- Share Icon in Glyph Style by Google Inc.
+
+-   Delete Icon in Glyph Style by Alex Martynov
+-   Edit Icon in Glyph Style by Google Inc.
+-   Share Icon in Glyph Style by Google Inc.
 
 ### Tutorials
-- Cloudinary: <a href="https://www.youtube.com/watch?v=3o1Z5N9TeuQ&t=567s">How to Upload Images to Cloudinary (using REACT JS & Node JS )</a>
+
+-   Cloudinary: <a href="https://www.youtube.com/watch?v=3o1Z5N9TeuQ&t=567s">How to Upload Images to Cloudinary (using REACT JS & Node JS )</a>
 
 ## License
+
 N/A
