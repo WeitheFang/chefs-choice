@@ -58,8 +58,36 @@ const newFrom = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            // If successful, redirect the browser to the main page
-            document.location.replace('/');
+            console.log('success');
+            response.json().then((data) => {
+                let formData = new FormData();
+                let image = document.querySelector('#file-upload').files[0];
+                if (image) {
+                    formData.append('picture', image);
+                    formData.append('id', data.id);
+                    fetch('/api/uploadImage', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error('Error uploading image.');
+                            }
+                            console.log('Image successfully uploaded.');
+                            response.json().then((data) => {
+                                console.log('image link');
+                                console.log(data);
+                                // If successful, redirect the browser to the main page
+                                document.location.replace('/');
+                            });
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        });
+                } else {
+                    document.location.replace('/');
+                }
+            });
         } else {
             alert(response.statusText);
         }
