@@ -18,17 +18,11 @@ router.get('/', async (req, res) => {
 
 router.get('/addRecipe', async (req, res) => {
     try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Recipe }],
-        // });
-        // const user = userData.get({ plain: true });
         const TagData = await Tag.findAll({
             attributes: ['tag', 'id'],
         });
         const tags = TagData.map((tag) => tag.get({ plain: true }));
         res.render('addRecipe', {
-            // ...user,
             tags,
             logged_in: true,
         });
@@ -84,7 +78,6 @@ router.get('/recipe/:id', async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
-        console.log(err);
     }
 });
 
@@ -102,12 +95,10 @@ router.get('/profile', withAuth, async (req, res) => {
         let user;
         const recipes = recipeData.map((recipe) => {
             user = recipe.user.get({ plain: true });
-            console.log(user);
 
             return recipe.get({ plain: true });
         });
-        console.log(recipes);
-        console.log(user);
+
         res.render('profile', {
             recipes,
             user,
