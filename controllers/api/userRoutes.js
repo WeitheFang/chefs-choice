@@ -4,7 +4,6 @@ const { User, Recipe } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body);
         const newUser = req.body;
         newUser.password = await bcrypt.hash(newUser.password, 10);
         const userData = await User.create(newUser);
@@ -15,7 +14,6 @@ router.post('/', async (req, res) => {
         });
     } catch (err) {
         res.status(400).json(err);
-        console.log(err);
     }
 });
 

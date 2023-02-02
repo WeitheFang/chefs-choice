@@ -4,13 +4,6 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-        console.log(
-            '_________________________________________________________'
-        );
-        console.log(req.body);
-        console.log(
-            '_________________________________________________________'
-        );
         const {
             recipe_name,
             recipe_directions,
@@ -26,11 +19,8 @@ router.post('/', withAuth, async (req, res) => {
             difficulty,
             user_id: req.session.user_id,
         });
-        console.log(newRecipe.dataValues);
         const recipe_id = newRecipe.dataValues.id;
-        console.log(recipe_id);
         tag_id.forEach(async (tag) => {
-            console.log(tag);
             await RecipeTag.create({
                 recipe_id: recipe_id,
                 tag_id: tag,
@@ -47,7 +37,6 @@ router.post('/', withAuth, async (req, res) => {
         });
         res.status(200).json(newRecipe);
     } catch (err) {
-        console.log(err);
         res.status(400).json(err);
     }
 });

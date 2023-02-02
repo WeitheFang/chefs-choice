@@ -9,20 +9,15 @@ const newFrom = async (event) => {
     const difficulty = document.querySelector('#difficulty').value.trim();
 
     let checklist = document.getElementsByClassName('tags');
-    console.log(checklist);
     let tag_id = [];
     for (let i = 0; i < checklist.length; i++) {
         if (checklist[i].checked) {
             tag_id.push(parseInt(checklist[i].id.split('_')[1]));
         }
     }
-    console.log(tag_id);
 
     let allIngredients = document.getElementsByClassName('ingredients');
     let allQuantities = document.getElementsByClassName('quantities');
-
-    console.log(allIngredients);
-    console.log(allQuantities);
 
     let finalIngredients = [];
 
@@ -35,7 +30,6 @@ const newFrom = async (event) => {
         };
         finalIngredients.push(finalIngredient);
     }
-    console.log(finalIngredients);
 
     if (
         recipe_name &&
@@ -58,7 +52,6 @@ const newFrom = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            console.log('success');
             response.json().then((data) => {
                 let formData = new FormData();
                 let image = document.querySelector('#file-upload').files[0];
@@ -73,10 +66,7 @@ const newFrom = async (event) => {
                             if (!response.ok) {
                                 throw new Error('Error uploading image.');
                             }
-                            console.log('Image successfully uploaded.');
                             response.json().then((data) => {
-                                console.log('image link');
-                                console.log(data);
                                 // If successful, redirect the browser to the main page
                                 document.location.replace('/');
                             });
