@@ -93,4 +93,5 @@ This app was made in collaboration with:
 -   Cloudinary: <a href="https://www.youtube.com/watch?v=3o1Z5N9TeuQ&t=567s">How to Upload Images to Cloudinary (using REACT JS & Node JS )</a>
 
 ## License
+
 MIT
