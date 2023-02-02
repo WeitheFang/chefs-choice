@@ -991,6 +991,10 @@ body {
     margin-right: 1rem;
   }
 
+
+  .md\:flex {
+    display: flex;
+  }
   .md\:h-auto {
     height: auto;
   }
