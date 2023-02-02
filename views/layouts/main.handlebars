@@ -21,12 +21,12 @@
     </head>
 
     <body>
-        <header class="flex h-16 items-center justify-between gap-2">
+        <header class="flex h-16 items-center justify-between gap-2 p-2">
             <a
                 href="/"
-                class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-48"
+                class="h-12 flex-none dark-red text-white flex justify-center items-center m-2 p-2 rounded-xl w-48 text-xl font-thin"
             >
-                LOGO
+                Chef's Choice
             </a>
             {{#if logged_in}}
             <div class="hidden lg:flex">
@@ -49,7 +49,6 @@
                     Sign Out
                 </a>
             </div>
-            <!-- This is an example component -->
             <div class="m-5 lg:hidden">
                 <button
                     class="text-white bg-[#a75d5d] dark-red focus:ring-4 hover:shadow-xl transition-shadow duration-300 font-thin rounded-xl px-4 p-3 text-center inline-flex items-center cursor-pointer"
@@ -120,6 +119,7 @@
                 action=""
                 id="search-form"
             >
+                <label for="search" class="hidden">Search for the recipe</label>
                 <input
                     type="search"
                     id="search"
