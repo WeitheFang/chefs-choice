@@ -23,7 +23,6 @@ Since this website is a work in progress, we also some ideas we hope to implemen
 -   Inserting a comment system
 -   Rating system to rate the recipe
 -   Inclusion of nutrition facts
--   Having a functional search bar
 -   Accessing any users profile and recipes
 -   Creating an in-house purchase system
 
@@ -94,5 +93,4 @@ This app was made in collaboration with:
 -   Cloudinary: <a href="https://www.youtube.com/watch?v=3o1Z5N9TeuQ&t=567s">How to Upload Images to Cloudinary (using REACT JS & Node JS )</a>
 
 ## License
-
-N/A
+MIT
